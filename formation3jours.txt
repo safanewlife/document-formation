@@ -57,8 +57,9 @@ directement qui sont lié  une base de donné mongo
 
 alors pour runner the serveur back il faut faire npm strat sur le pack of backoffice , ng serve -o sur le front  , et runner la base mongo
 
-20)cross origin Request sharing
+20)cross origin Request sharing 
 
+*****************************upload the project in github*******************************
 https://github.com/safanewlife/formationAngular 
 safanewlife
 sara96460719
@@ -73,7 +74,6 @@ git add + git commit pour commiter en local (repo local)
 
 aller dans espace cloud (reposotry) et crere le doosier repo ou le code va etre comité 
 
-
 etapes : creer un repo en local 
 installer git 
 cd project local
@@ -86,3 +86,30 @@ git remote add origin https://github.com/safanewlife/Monprojet2-components.git
 git push -u origin master
 
 faut savoir le bonn pratique
+
+https://code.tutsplus.com/series/the-solid-principles--cms-634
+
+
+git add ajout index git commit : ahout de repo local , git push ; push vers the distant rep
+
+
+************************************************************
+
+
+
+*************************************Routng**************************
+1)dans le fichier app.modules.ts
+ -import { RouterModule} from '@angular/router';
+ -const routes = [];
+ _RouterModule.forRoot( routes ) : import de module forRoot qui permet de intiliser le odule avec des routes (niveau principal des root)
+
+2)créer les composant
+3)puis dans le tpl de app on change le '<app-products-list></app-products-list>'  par <router-outlet></router-outlet> parce que le contenu de cette partie va prendre a chaque fois un contenbu selon le route clique dans la navigation
+
+4)go to the tpl of navbar componet to define the route into the link of navabar : go to the link and add the directive [routerlink] to define the root of the link , bind the directive routerlink [routerLink] = '[]'
+https://github.com/angular/angular-cli
+
+
+
+
+<base href="/"> : elle permet de traiter les chemin en relatif
