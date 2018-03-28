@@ -1,0 +1,134 @@
+1) plugin Augury pour debouuer les composant
+2) interface dans typescript : une liste des attributs pour contractualiser les objects (contractualisation de la structure) : créer une structure passer des objets de typ produit
+3) ng g interface domain/produit : générer une interface 
+4)arbre App : comoponents + domain + app.component.ts (po,nt d'entrée 
+5) tslint : outils pour les bonns pratiquy dans vscode : tslint.json : fichier de conf pour le plugin)
+7 interface on peut pas définir la visibilté des attributs et des méthodes
+8) on a pas crére une classe produit , j ai crére une interface comme ca je passe dans le tableau un type produit et passer des objets qui implemnte la structure produit (on a choist interface pas le classe ) :import { Produit } from '../../domain/produit'; pour importer  interface et utiliser dans le component
+8)bs3-table : il génre les code : bootstrap3 snippet
+9) on a parcourit la lsite des produit dans le tpl de component produit , uiliser ngfor 
+10)*ngif ; ses ont des directives strucuturelles : (ajouter a html)
+10) la classe de component produit (le VM ) contient de data de produit qui est archtecture pas bien il faut crére un service (Model) qui a de role gérer le data de produit (les services ils sont des singleton)
+11) créer un service  : ng g service  services/poduct
+
+App :
+  COMPONENTS
+  DOMAIN : les structres des données : ne sont pas lié a une couche 
+  services : les services ou (model)
+ dans le service on a une anotation @Injectable() pour le définir dans le contneur de service de angular
+12) ingecter le service dans le component (dans le constructeur de component product)
+13) définir une fonction getAllproduct dans le service qui retourne un tableau de produit
+14)ingecter le service dans le composnat product
+15) ngOnInit : lancé directement apres la construction des objects , 
+16) providers: [
+    ProductService
+  ], dans le app.modules.ts pour definir le scoop de service (avoir le service disponible pour tous les modules de application) on peut définir dans le scoop dans le component
+il faut déclarer dans le provider pour définir le sccop si nn ca va pas marché 
+pour définir un service !
+ @ingectbale
+ le définir dans le app.module.ts (provider) afin de définir le sccop
+
+17) le @ingectable est nécessaire ssi le service depend d autre service (si on supprime le @ingectable ca va fonctionner puisque deja defnit dans le provider et il a un sccop
+18) changer la visibilté juste pour le component product : dans le fichier app.component.ts ;@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  providers: [
+    ProductService
+  ]
+})
+
+18 ) data binding : cmment faire un binding entre le prpo html et le prop de model  : a l aide de {{}} par ex
+un fichier .ts (VM) qui joue le role d'intermediare entre le model et le view (traitemnt) 
+un model : génraleent implémenter comme un service qui va appeller le api pour récupérer le data 
+un view : tpl : afficher le data 
+
+19) openclicpart/org : pour récuperer des images hybergé sur le cloud , il nosu offre des image a utiliser 
+20) event binding : on met une fonction (clic) : 'fonctoion ca va exécuter le fonction de composant
+
+si on va faire un bind de model si nn pouir les bind des event il faut binder une fonction dans le class de composant (dans le vm ) puisque le tpl est lié directmeent par le vm la classe de composant du coup pour les event il faut définir la fonction dans le vm et on peut tester directemet sur des proprieté dans le tpl si c'est cette proproeté est d"finit dans le vm (le tpl a acss directement a tous les proprietés définit dans le vm classe de composant il observe le vm directement 
+21)ngModel on utilise pour les form : observateur deux coté si la valeur dans le tpl chang ou dans le composant change
+
+<input [(ngmodel)]='filter>
+<span>{{filter}}</input>
+
+si la valeur inpit change la valeur affiher deattribut filter dans le span change puisue y a 2 way binding , donc la valeur de attriburt de composant change et du coup la valeur affcihe dans le span change
+
+22) les pipe dans angular se sont des fonction appliqué pour le résultat d une prop ex [title] = 'product.name'|lowercase
+y au on a des custom pipe
+23) les hook se sont des traitement spécfique ingéctes dans le moment cycle de vie , pour appliquer les traitement spécifique
+dans le component y aura une possibilté de définir un hook , il faut que le component implémente interface de ce hook et dans le component définr le code de la fonction de hook
+
+chaque hook est défint par une interface si un component va hooker une étae de cycle e vie de composant , il faut qu il implémente cette interface et aprés redéfinir la fonction de interface et y aura l exécution de ce code durectement au moment de lancment de étape de cycle de vie de composant
+
+24) le pipe est une méthode de transformation pour crére un custom pipe , faut implemneter interface PipeTransform
+le type script est juste pour typer le javascript et utiliser la notion de classe et object , mais dans les fonction de lasse on peut directement ecrire javascript
+le pipe : c'est equivalent de template operateur on peut définir des tempalte opértauer
+tus le logique dans le tpl est implémenter coté composant
+
+donc on peut définir n'importe quel template iopérateur pour appliquer des traitements sur des proprietés used in the template
+
+github de mrodhani
+https://github.com/mromdhani?tab=repositories
+
+importer un projet avec git
+
+git remote : githib , bitbocket , gitlab
+
+git flow : les bonnes pratiques de gitur git de interveiw
+git branch -b : créer une branche 
+git checkout : bascule vers une branche
+différence entre git fetch et git pull
+
+25) view> command palette > ecrire git clone 
+clone url de reposotrory https://github.com/mromdhani/my-apm-module5-databinding-and-pipes.git
+installer les dependance (modules) npm install (il nous ajoute le node_module) puisue angulard il a besoin de dependance node js et auyres donc dans le projet  on a un fichier qui définit les dependance et on utilise outil de gestion de dependance npm install pour récupérer tous ces independance y compris jquery bootsrap et autres , fichier de conf packages.json qui defint les dependance js de projet (npm : gestionnaire de dependance pour le biblio js)
+
+ng serve -o : pour démarrer le projetverb lock using C:\Users\Lab01\AppData\Roaming\npm-cache\_locks\staging-04bd6e
+
+
+26)les composants utilisés dans un autre composants (inner composant ou nested component : un compodant consome par un autre composant).
+il communique avec le composant parent le parent lui passe des paraétres 
+pour nester le resultat d un composant dans un autre composant ; il sufft de integrer la balise de son selecteur dans le tpl de composant : 
+tpl parent :
+<selecteur-fils></selecteur-fils> : comme ca le tpl de composant fils va etre intégrer dans le tpl de composant parent
+y a une possibilté de passer un parmétre vers le composant fils a aide de "@input" : il siffit de décorer le attribut de composant fils qui joue le role de input avec le @ (ex @input rating) + dans le composant fils 
+dans la balise de selecteur faire le proprety binding : <selecteur-fils [rating] : 'product.rating'> . conslusion définir dans le composant fils l input et passer la valeur de input avec le data bonding dans la
+     balise qui présente le rendu de composant fils
+statefull et stateless : a voir 
+@output() : dans le composant fils por définir le outpot de fils composant : output sera lancé comme event observé par le parent
+dans exemple dans le fils on a declencher un event special dans le cans de click sur le div de fils , si le click est declenche il va declenche le event special qui bindé dans le composant parnent (observe par le parent) (eventspecial):'functionParaent(param)' 
+
+27)kendo for  for Angular : 
+https://www.telerik.com/kendo-angular-ui/components/grid
+
+28) module 7 intégre linteraction ente le composant fils et parents*
+
+
+asyncrone et syncrone
+
+28) évolution des appl rest : 
+native appel js XHR (objet xhrhttprequest)
+jquery ajax (enveloppe  ancien obejt xhr de js)
+ESC6 : Promise : ajax mais avec un syntaxe plus simplifié
+le soucis de ces appels : il faut attendre que tous les data arrive pour les traiter
+la solution pour eviter ce soucis  : les observables : c'est de ajax mais pas de blouage par rapport au donné : anticiper l explotaion des donné des qu il commence à arrivé 
+bibliothéque : RX js : appel au web service rest en mode ajaw mais avec la notion observable (comencer à anticiper les donnes a leurs arrivées ) : pour éviter le bloquage coté ui
+
+29)subscribe to an observble
+
+https://jsonplaceholder.typicode.com/ : a facke provider for rest api
+
+https://jsonplaceholder.typicode.com/posts : exemple de api rest
+
+30) ng new monProjet-Rest : pour crer un nouveau projet angular cli
+31)créer une interface ipost (notr model)qu on va utiliser pour mapper le contenu json retourné par api
+32) ng g component components/poslist pour créer le mv  qui va etre un intermidare entre le tpl et le service qui va appeller le api , le model est utilisé pour mapper le résultat de json api
+
+31)  ng g service services/postService : pour créer le service qui va appller api
+
+32)ingecter le service http dans le service post
+constructor(private _http: Http) { } et implémenter le fonction getsposts 
+33)  providers: [PostServiceService], pour definir l scoop de service
+
+
