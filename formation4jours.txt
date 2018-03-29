@@ -15,3 +15,58 @@ application ensemble de module qui enseble de composant qui utilised des service
 free tutorials : site d apprentissage
 edimar ; des url  free donwload manager
 alphorm on peut acheter des cours
+
+******Qualité *********
+
+-Linting  :Vérification des régles de codage :régle de nomage .... 
+-Unit test :
+-Intégartion test :
+-deployement :
+
+Angulard cli il intégre tous ces techniques 
+on va voir comment configurer les composants
+tsLint : c'est linteur (linting) de typescript le fichier de config  sont dans tslint.sjon qui implémenté les régle 
+
+
+Angular essentiel : plugin vscode  qui inétgre tslint (ce plugin vs coe intégre les diférents )
+jasmine test unitairement  karma c'est le lanceur des test unitaires (jasmine lance les tests sur lkarma on aure une interface qui affiche les diférents outils des tests)
+
+ng test lance les test unitaires d etout le projetc et affche le resultat sur le navigateur
+
+le principe des tets unitaires : logique blackbox "given when  then" (les entress et selon ces entres que ce je doit avoir comme sortie)
+
+Given : the object under test
+when : when we call the method 
+then : what happen after the appel 
+je veux tester un service  et il dependance : on mokue les dependance (avoir un oject avec des fake prop on suppose su il est bien , remplacer ibject par un moque , j'instance pas un objects j utrilise un moque (fake object : definir un object qui remplace le object dependant)
+
+
+TDD  pas besoin d ecrire le cas de test : si je donne ca au fonction elle va donner ca avant meme d ecrire le code 
+
+TDD : Red = au debut les tets sont false , Green = ca passe apres le codage de la fonction ,  ReFactory ; optimiser le code et retester 
+
+Refactory  ; ca put impcater juste le code pas el test si on a pas changer architecture , si nn si on fait un refactoring de archtecture , ca va impcater le test
+
+Seleminum : test fonctionnel (tous les autres framework sont deja base sur seleminum plugin naviagateur)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
