@@ -1,0 +1,115 @@
+1)le composant ou le VM est un espace de visibilité c'est a dire chaque attribut declaré dans la classe est vue dans le tpl
+
+2)on peut gérer des comminiuastion (Nested composant) pour passer des informatoon parent fils : il faut que le fils sera déclaré (@input) @ouput déclenché un event 
+qui sera observé par le parent , le parent passe information au composnat fils à l aide de proprety binding  et le fils doit déclarer cette proprieté as @input
+
+3) donc service ->composant->view : donc pour un résultat de service ou data sera accessible dans le tpl de comoposant il faut déclarer le service comme attribut , ou ingecter le service et 
+récupérer les data dans le composant comme étant aussi un attribut , et comme ca cette data et accessible à partir de tpl
+
+4) pipe : patern design decorator , appliquer un traitement spécifique pour un data 
+  si j ajoute un pipe , il va etre ajouté a la liste des composant ds module , il est considére comme un composant mais sans tpl
+le design patern decorator , c'est mieux présnter les truc
+
+5)ingecter un service direcement dans le constructeur de composant ( private _service:typeservice) , il faut le déclarer dans le provider pour le conteneur peut ingecter (définir un scoop pour ce service)
+
+6) les hooks sont implémente dans des interace , pour implémente un hook il suffit que le composant implémente interface et implémenter la fonction qui représente l'étape dans le lifecycle dans le composant
+
+7)ngOninit() lifecycle hooks
+
+8) le composant appartient a la couche ui pas métier du coup pas de traitement métier ou donnés dans ce classe , juste appel au services
+
+9) httpClient : -importer angular/common/httpClientModule , on retourne des observable
+observable est offert par rxJs si nn Httpclient offre la ajw normal c'est à dire lancer une requete et récupérer tous les résultat
+
+10)Dévlopper de backoffice Rest avec js (node js et mongoDb)
+
+11)Mango ackademie des cours il faut subscribe
+
+12)https://openclassrooms.com/courses/developpez-avec-angular
+13)npm node packag manager
+
+14)express js : couche pour le node js pour facilter le devleoppement 
+	pour installer un petit exemple de express : faut installer express a aide de npm 
+	-npm install -g express-generator
+	-express projet : créer le projet 
+	- cd project : installer les dépendance : npm install
+
+15) toujoirs npm : gestionneu de dependance créer par node , on trouv les dépendanc dans package.json
+npm start pour lancer node (les serveurs créer par node et les mettres en écoute des réquetes) + aller a http://localhost:3000/
+
+16) model nosql (model de mongoDB) mongoDb suit le model nosql
+17) installer une base de donné mongoDB : aller au dossier de mongodb sous c:\programmes t lancer mongod.exe (créer un dossier c:\data\db un dossier nécessaire pour que mongodb démarre)
+
+18)installer Robo3t client mongodb aprés il a etre lancer , on va créer une connection et base de donné
+   ajout un collesction produit(clic droit sur la base)
+   ajout document (collction produits)
+clic droit sur la collection ->show documents pour visualiser les données 
+
+&) 2 parémtre  envoyé dans le requte http pour rest , Accept ; négocier le format pour le serveur
+content-Type
+
+les principes de sécurité de web les stadart (authentification )
+
+json server : https://github.com/typicode/json-server pour forunir des crud api rest web api sur une structure
+
+module pour express  ui génere a partir de shéma des documents tous l'architecture (le model, l'orm, les controlleur rest ): https://www.npmjs.com/package/express-mongoose-generator un soutl sui génrer tout un module espress
+directement qui sont lié  une base de donné mongo
+
+alors pour runner the serveur back il faut faire npm strat sur le pack of backoffice , ng serve -o sur le front  , et runner la base mongo
+
+20)cross origin Request sharing 
+
+*****************************upload the project in github*******************************
+https://github.com/safanewlife/formationAngular 
+safanewlife
+sara96460719
+
+https://openclassrooms.com/courses/developpez-avec-angular/observez-les-donnees-avec-rxjs
+
+git inti pour initialiser le projet (pour crer .git sous arboresssance come ca sera joué coté git)
+git config --global user.name
+git config --global user.mail
+
+git add + git commit pour commiter en local (repo local)
+
+aller dans espace cloud (reposotry) et crere le doosier repo ou le code va etre comité 
+
+etapes : creer un repo en local 
+installer git 
+cd project local
+git init dans project afon que ce projet sera gérer coté git (créer un rep local lié a ce project)
+add +commit pour avoir nos comit versionné sur le repo local 
+créer depot distant (github)
+
+lié le repo local (origin) vers le depo distant
+git remote add origin https://github.com/safanewlife/Monprojet2-components.git
+git push -u origin master
+
+faut savoir le bonn pratique
+
+https://code.tutsplus.com/series/the-solid-principles--cms-634
+
+
+git add ajout index git commit : ahout de repo local , git push ; push vers the distant rep
+
+
+************************************************************
+
+
+
+*************************************Routng**************************
+1)dans le fichier app.modules.ts
+ -import { RouterModule} from '@angular/router';
+ -const routes = [];
+ _RouterModule.forRoot( routes ) : import de module forRoot qui permet de intiliser le odule avec des routes (niveau principal des root)
+
+2)créer les composant
+3)puis dans le tpl de app on change le '<app-products-list></app-products-list>'  par <router-outlet></router-outlet> parce que le contenu de cette partie va prendre a chaque fois un contenbu selon le route clique dans la navigation
+
+4)go to the tpl of navbar componet to define the route into the link of navabar : go to the link and add the directive [routerlink] to define the root of the link , bind the directive routerlink [routerLink] = '[]'
+https://github.com/angular/angular-cli
+
+
+
+
+<base href="/"> : elle permet de traiter les chemin en relatif

@@ -1,0 +1,17 @@
+1) les abse de bonné nosql : rapide mais on sacrfife la cohérence
+é) Mongi et csandra de facebook se sont les base nosql (mongo s'organis e les donnes avec des json casandra avec des colonnes)
+3) cors : nome wc3 le navigateur le fait pour protget l alle d un domlaine a un autre (interdit le switch entre un dimaine et un autre ) , cors , il ne peut pas passer si et seulement dans le headen de requete on a une autorisation 
+pour cominuquer avec se serveur ; protoction faite par le navigateur et authorisé par ds serveurs 
+4)Rxjs ; qui implente le observale angulard il implente pas les observalbes: 
+observable : mode observateur , des que je finit le develeoppement observateu il suffitde s'abonner  a cet observateu
+
+	Rooting : dans le app;module , impotyer le routing module et configurer le table de routage (poasser ce tableau directement dna sle module)
+produire les url (ajouter les directive dans les tpl)
+spécifier le router-outlet : directive pour que le conteu de routeur s'affiche dans la zone tagé parcette directive
+guard
+
+application ensemble de module qui enseble de composant qui utilised des services
+
+free tutorials : site d apprentissage
+edimar ; des url  free donwload manager
+alphorm on peut acheter des cours
